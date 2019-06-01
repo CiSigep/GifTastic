@@ -1,0 +1,11 @@
+#buttonContainer {
+    min-height: 100px;
+}
+
+#gifContainer {
+    min-height: 750px;
+}
+
+#searchContainer {
+    min-height: 50px;
+}
