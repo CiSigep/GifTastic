@@ -1,14 +1,18 @@
 $(function (){
 
     // Function to send a request for the gifs
-    function sendRequest(query) {
+    function sendRequest(query, resultLimit, page) {
+        if(!resultLimit)
+            resultLimit = 10;
+        if(!page)
+            page = 0;
         $.get({
             url : 'https://api.giphy.com/v1/gifs/search',
             data : {
                 api_key: 'YOUR_KEY',
                 q : query,
-                limit : 10,
-                offset : 0,
+                limit : resultLimit,
+                offset : resultLimit * page,
                 rating : 'pg'
             }
         }).done(function(data){
