@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +9,41 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="assets/javascript/script.js"></script> 
+    <script src="assets/javascript/script.js"></script>
 </head>
+
 <body class="w-100">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row border-bottom">
             <div id="buttonContainer" class="col-12 bg-light py-2">
             </div>
         </div>
         <div class="row">
-            <div class="col-md-9 bg-info">
-                <div id="gifContainer" class="container-fluid pt-3">
-                    
+            <!-- Show this search bar on smaller screens -->
+            <div class="col-sm-12 d-md-none d-block border-bottom">
+                <div class="input-group mb-3 pt-3">
+                    <input data-which="sm" type="text" class="form-control query-input" placeholder="Search" aria-label="Search Term">
+                    <div class="input-group-append">
+                        <button data-which="sm" class="btn btn-dark search-button" type="button">Search</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 bg-danger">
+            <div class="col-md-9 col-sm-12">
+                <div id="gifContainer" class="container-fluid pt-3">
+
+                </div>
+            </div>
+            <!-- Show this search bar on larger screens -->
+            <div class="col-md-3 d-md-block d-none border-left">
                 <div class="input-group mb-3 pt-3">
-                    <input id="query" type="text" class="form-control" placeholder="Search" aria-label="Search Term" aria-describedby="basic-addon2">
+                    <input data-which="md" type="text" class="form-control query-input" placeholder="Search" aria-label="Search Term">
                     <div class="input-group-append">
-                      <button id="searchButton" class="btn btn-dark" type="button">Search</button>
+                        <button data-which="md" class="btn btn-dark search-button" type="button">Search</button>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
