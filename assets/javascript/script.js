@@ -30,9 +30,29 @@ $(function (){
             }
         }).done(function(data){
             var imageData = data.data;
-            // Clear the container
+
+            // Clear the container if its a new search.
             if(numGifs === 0)
                 $(".gif-row").remove();
+
+            // No results check
+            if(imageData.length === 0){
+                var noResultsRow = $("<div>");
+                noResultsRow.addClass("row gif-row my-2");
+
+                var noResultsCol = $("<div>");
+                noResultsCol.addClass("col-12");
+                
+                noResultsCol.text(numGifs === 0 ? "No Results" : "No More Results");
+
+                noResultsRow.append(noResultsCol);
+                
+                $("#loadRow").before(noResultsRow);
+
+                $("#loadRow").addClass("d-none");
+
+                return;
+            }
 
             var row;
             var grabbedRow = false;
